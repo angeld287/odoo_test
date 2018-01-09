@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Actions-->
+        <record models="ir.actions.act_window" id="action_prueba_estudiantes">
+            <field name="name">Estudiantes</field>
+            <field name="model">pruebas.estudiantes</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu items -->
+        <menuitem
+            id="menu_prueba"
+            name="prueba"
+            sequence="10"/>
+        <menuitem
+            id="menu_inicio"
+            name="inicio"
+            sequence="10"
+            parent="menu_prueba"/>
+        <menuitem
+            id="menu_estudiantes"
+            name="Estudiantes"
+            sequence="10"
+            parent="menu_inicio"
+            action="action_aginc_category_contract"/>
+
+        <!-- VIEWS -->
+        <record id="view_prueba_estudiantes_form" models="ir.ui.view">
+            <field name="name">Prueba_estudiantes_form</field>
+            <field name="model">prueba.estudiantes</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Estudiantes">
+                    <field name="nombre"/>
+                    <field name="apellido"/>
+                    <field name="cedula"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="direccion"/>
+                    <field name="active"/>
+                </form>
+            </field>
+        </record>    
+        <record id="view_prueba_estudiantes_form" models="ir.ui.view">
+            <field name="name">Prueba_estudiantes_tree</field>
+            <field name="model">prueba.estudiantes</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Estudiantes">
+                    <field name="nombre"/>
+                    <field name="apellido"/>
+                    <field name="cedula"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="direccion"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>
