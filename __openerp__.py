@@ -9,7 +9,10 @@
 	""",
 	'update_xml': [],
 	'data': [
-		'views/estudiantes_view.xml'
+		'views/estudiantes_view.xml',
+		'views/estados_view.xml',
+		'views/municipios_view.xml',
+		'views/parroquias_view.xml'
 	],
 	'installable': True,
 	'auto_install': False,

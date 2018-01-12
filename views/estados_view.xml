@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- VIEWS -->
+        <record id="view_prueba_estados_form" model="ir.ui.view">
+            <field name="name">Prueba_estados_form</field>
+            <field name="model">prueba.estados</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Estados">
+                    <group>
+                        <field name="nombre" style="with:30%"/>
+                        <field name="active"/>
+                    </group>
+                </form>
+            </field>
+        </record>    
+
+        <record id="view_prueba_estados_tree" model="ir.ui.view">
+            <field name="name">Prueba_estados_tree</field>
+            <field name="model">prueba.estados</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Estados">
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Actions-->
+        <record model="ir.actions.act_window" id="action_prueba_estados">
+            <field name="name">Estados</field>
+            <field name="res_model">prueba.estados</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Menu items -->
+        <menuitem id="conf_direcc" name="Configuracion de Direccion" sequence="10" parent="menu_prueba"/>
+        <menuitem id="menu_estados" name="Estados" sequence="10" parent="conf_direcc" action="action_prueba_estados"/>
+    </data>
+</openerp>

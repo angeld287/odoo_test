@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- VIEWS -->
+        <record id="view_prueba_res_company_form" model="ir.ui.view">
+            <field name="name">Universidad</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                
+            </field>
+        </record>    
+    </data>
+</openerp>
