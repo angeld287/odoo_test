@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- VIEWS -->
+        <record id="view_prueba_familiares_contactos_form" model="ir.ui.view">
+            <field name="name">Prueba_familiares_contactos_form</field>
+            <field name="model">prueba.familiares_contactos</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <sheet>
+                    <form string="Familiar de Contacto">
+                        <group col="4">
+                            <field name="nombre" />
+                            <field name="estudiante_id" readonly="1"/>
+                            <field name="apellido" />
+                            <field name="cedula" />
+                            <field name="estado_id" on_change="pulsar_estado()" widget="selection"/>
+                            <field name="municipio_id" domain="[('estado_id', '=', estado_id)]" widget="selection"/>
+                            <field name="parroquia_id" domain="[('municipio_id', '=', municipio_id)]" widget="selection"/>
+                            <field name="sector" />
+                            <field name="calle" />
+                            <field name="active" />
+                        </group>                        
+                    </form>
+                </sheet>
+            </field>
+        </record>    
+        <record id="view_prueba_familiares_contactos_tree" model="ir.ui.view">
+            <field name="name">Prueba_familiares_contactos_tree</field>
+            <field name="model">prueba.familiares_contactos</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Familiar de Contact" create="0">
+                    <field name="estudiante_id" />
+                    <field name="nombre"/>
+                    <field name="apellido"/>
+                    <field name="cedula"/>
+                    <field name="estado_id"/>
+                    <field name="municipio_id"/>
+                    <field name="parroquia_id"/>
+                    <field name="sector"/>
+                    <field name="calle"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Actions-->
+        <record model="ir.actions.act_window" id="action_prueba_familiares_contactos">
+            <field name="name">Familiar de Contacto</field>
+            <field name="res_model">prueba.familiares_contactos</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu items -->
+        <menuitem id="menu_familiares_contactos" name="Familiar de contacto" sequence="10" parent="menu_inicio" action="action_prueba_familiares_contactos"/>
+
+    </data>
+</openerp>

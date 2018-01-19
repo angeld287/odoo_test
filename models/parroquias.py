@@ -7,6 +7,7 @@ class parroquias(osv.osv):
 
     _columns={
         'nombre':fields.char('Nombre del parroquias',size=80,required=True,help='Aqui se coloca el nombre del parroquias'),
+        'municipio_id': fields.many2one('prueba.municipios','Nombre del Municipio'),
         'active':fields.boolean('Active'),
     }
 

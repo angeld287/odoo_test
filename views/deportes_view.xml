@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- VIEWS -->
+        <record id="view_prueba_deportes_form" model="ir.ui.view">
+            <field name="name">Prueba_deportes_form</field>
+            <field name="model">prueba.deportes</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Deportes">
+                    <group>
+                        <field name="nombre" style="with:30%"/>
+                        <field name="active"/>
+                    </group>
+                </form>
+            </field>
+        </record>    
+
+        <record id="view_prueba_deportes_tree" model="ir.ui.view">
+            <field name="name">Prueba_deportes_tree</field>
+            <field name="model">prueba.deportes</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Deportes">
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Actions-->
+        <record model="ir.actions.act_window" id="action_prueba_deportes">
+            <field name="name">Deportes</field>
+            <field name="res_model">prueba.deportes</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Menu items -->
+        <menuitem id="conf_menu" name="Configuracion" sequence="10" parent="menu_prueba"/>
+        <menuitem id="menu_deportes" name="Deportes" sequence="10" parent="conf_menu" action="action_prueba_deportes"/>
+    </data>
+</openerp>

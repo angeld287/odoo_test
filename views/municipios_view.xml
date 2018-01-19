@@ -10,7 +10,8 @@
                 <form string="Municipios">
                     <group>
                         <field name="nombre" style="with:30%"/>
-                        <field name="active"/>
+                        <field name="estado_id" style="with:30%"/>
+                        <field name="active" style="with:30%"/>
                     </group>
                 </form>
             </field>

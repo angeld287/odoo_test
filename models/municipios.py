@@ -7,6 +7,7 @@ class municipios(osv.osv):
 
     _columns={
         'nombre':fields.char('Nombre del municipios',size=80,required=True,help='Aqui se coloca el nombre del municipios'),
+        'estado_id': fields.many2one('prueba.estados','Estado'),
         'active':fields.boolean('Active'),
     }
 

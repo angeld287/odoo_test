@@ -36,7 +36,7 @@
         </record>
         
         <!-- Menu items -->
-        <menuitem id="conf_direcc" name="Configuracion de Direccion" sequence="10" parent="menu_prueba"/>
+        <menuitem id="conf_direcc" name="Configuracion de Direccion" sequence="10" parent="conf_menu"/>
         <menuitem id="menu_estados" name="Estados" sequence="10" parent="conf_direcc" action="action_prueba_estados"/>
     </data>
 </openerp>
